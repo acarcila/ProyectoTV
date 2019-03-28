@@ -49,3 +49,9 @@
 @-webkit-keyframes spin {
   to { -webkit-transform: rotate(360deg); }
 }
+
+.rel-cargando{
+  display: flex;
+  justify-content: center !important;
+  align-self: center !important;
+}

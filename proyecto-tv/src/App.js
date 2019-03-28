@@ -9,11 +9,19 @@ const loading = () => (
   </div>
 );
 
+const Login = Loadable({
+  loader: () => import("./view/Login/Login"),
+  loading
+});
+
 class App extends Component {
   render() {
     return (
-      <div className="container-fluid">
-      </div>
+      <HashRouter>
+        <Switch>
+          <Route exact path="/" name="Login - IMUAO" component={Login} />
+        </Switch>
+      </HashRouter>
     );
   }
 }
