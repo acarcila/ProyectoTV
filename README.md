@@ -1,4 +1,4 @@
 # ProyectoTV
 
-INTEGRANTES:
+##INTEGRANTES:
   Andrés Camilo Arcila Ortiz
