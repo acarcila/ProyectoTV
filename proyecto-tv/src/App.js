@@ -10,7 +10,7 @@ const loading = () => (
 );
 
 const Login = Loadable({
-  loader: () => import("./view/Login/Login"),
+  loader: () => import("./vista/Login/Login"),
   loading
 });
 
