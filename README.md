@@ -1,2 +1,5 @@
 # ProyectoTV
-Juan David Posso
+
+## INTEGRANTES:
+  Andrés Camilo Arcila Ortiz
+  Juan David Posso
