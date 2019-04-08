@@ -1,0 +1,34 @@
+.rel-card {
+  width: 50%;
+}
+
+.rel-container {
+  height: 100vh;
+}
+
+.rel-input {
+  width: 100%;
+}
+
+.rel-imagen-iniciar-sesion {
+  background-image: url("/assets/img/Grupo242.png");
+  background-color: #cccccc;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.rel-subtitulo-login {
+  color: #7296bb !important;
+}
+
+.rel-titulo-login {
+  color: #1772d2;
+  font-size: 3em;
+  font-weight: 700;
+}
+
+.rel-google-icon {
+  width: auto;
+  height: 1em;
+}
