@@ -19,13 +19,19 @@ const TeacherHome = Loadable({
   loading
 });
 
+const TeacherClass = Loadable({
+  loader: () => import("./vista/Teacher/Class/Class"),
+  loading
+});
+
 class App extends Component {
   render() {
     return (
       <HashRouter>
         <Switch>
           <Route exact path="/" name="Login - IMUAO" component={Login} />
-          <Route exact path="/Teacher/Home" name="Login - IMUAO" component={TeacherHome} />
+          <Route exact path="/Teacher/Home" name="Home" component={TeacherHome} />
+          <Route exact path="/Teacher/Class" name="Class" component={TeacherClass} />
         </Switch>
       </HashRouter>
     );
