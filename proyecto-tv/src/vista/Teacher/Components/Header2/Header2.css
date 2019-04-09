@@ -1,0 +1,21 @@
+.navbar-jdp1 {
+    font-size: 1.75rem;
+}
+
+.navbar-jdp2 {
+    font-size: .8rem;
+}
+
+.div-jdp {
+    font-size: 1.2rem;
+}
+
+.a-jdp {
+    font-size: 1.3rem;
+    color: #ffffff;
+}
+
+.a-jdp:hover {
+    color: #ffffff;
+    background: #006fe6;
+}
