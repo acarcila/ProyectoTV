@@ -56,11 +56,19 @@ export default class Login extends Component {
                         <div className="px-3 py-3">
                             <h6 className="font-weight-bold text-primary">En lo que mas se equivocaron</h6>
                         </div>
-                        <div className="card">
-                            <Chart chartData={this.state.chartData} location="Que es un sistema multimedia" legendPosition="bottom" />
-                        </div>
-                        <div>
-                            <Chart chartData={this.state.chartData} location="Que es un sistema multimedia" legendPosition="bottom" />
+                        <div className="container-jdp">
+                            <div className="mb-4">
+                                <Chart chartData={this.state.chartData} location="Que es un sistema multimedia" legendPosition="bottom" />
+                            </div>
+                            <div className="mb-4">
+                                <Chart chartData={this.state.chartData} location="Que es un sistema multimedia" legendPosition="bottom" />
+                            </div>
+                            <div className="mb-4">
+                                <Chart chartData={this.state.chartData} location="Que es un sistema multimedia" legendPosition="bottom" />
+                            </div>
+                            <div className="mb-4">
+                                <Chart chartData={this.state.chartData} location="Que es un sistema multimedia" legendPosition="bottom" />
+                            </div>
                         </div>
                     </div>
                 </div>
