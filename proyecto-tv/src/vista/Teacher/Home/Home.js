@@ -18,8 +18,8 @@ export default class Login extends Component {
                 <Header1 />
                 <div className="container">
                     <div className="row">
-                        <Card imagen="/assets/img/sistemamultimedia.jpg" titulo="ASM 2019-1" subtitulo="Operaciones y sistemas" descripcion="Clase de arquitectura de sistema multimedia" />
-                        <Card imagen="/assets/img/sistemamultimedia.jpg" titulo="ASM 2019-3" subtitulo="Operaciones y sistemas" descripcion="Clase de arquitectura de sistema multimedia" />
+                        <Card imagen="/assets/img/asm.jpg" titulo="ASM 2019-1" subtitulo="Operaciones y sistemas" descripcion="Clase de arquitectura de sistema multimedia" />
+                        <Card imagen="/assets/img/asm.jpg" titulo="ASM 2019-3" subtitulo="Operaciones y sistemas" descripcion="Clase de arquitectura de sistema multimedia" />
                     </div>
                 </div>
             </div>
