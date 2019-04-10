@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import "./Home.css";
+import Header1 from "../Components/Header1/Header1"
+import Card from "../Components/Card/Card";
 
 export default class Login extends Component {
     constructor(props) {
@@ -9,20 +11,18 @@ export default class Login extends Component {
             lastName: ""
         };
     }
-    handleSumit = event => {
-        this.props.history.push("/");
-    };
+
     render() {
         return (
-            <nav className="navbar-jdp navbar navbar-dark bg-primary ">
-                <a className="navbar-jdp navbar-brand" href="#">
-                    <img src="/docs/4.3/assets/brand/bootstrap-solid.svg" width="30" height="30" className="d-inline-block align-top" alt=""/>
-                    YouLearn
-                </a>
-                <nav className="justify-content-center">
-                    
-                </nav>
-            </nav>
+            <div>
+                <Header1 />
+                <div className="container">
+                    <div className="row">
+                        <Card imagen="/assets/img/sistemamultimedia.jpg" titulo="ASM 2019-1" subtitulo="Operaciones y sistemas" descripcion="Clase de arquitectura de sistema multimedia" />
+                        <Card imagen="/assets/img/sistemamultimedia.jpg" titulo="ASM 2019-3" subtitulo="Operaciones y sistemas" descripcion="Clase de arquitectura de sistema multimedia" />
+                    </div>
+                </div>
+            </div>
         );
     }
 }
