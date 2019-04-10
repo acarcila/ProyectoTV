@@ -1,14 +1,26 @@
-.button {
-    background-color: #4CAF50; /* Green */
-    border: none;
-    color: white;
-    padding: 16px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    -webkit-transition-duration: 0.4s; /* Safari */
-    transition-duration: 0.4s;
-    cursor: pointer;
-  }
+button {
+  background-color: rgb(23, 114, 210);
+  color: rgb(255, 255, 255);
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 4px;
+  font-size: 16px;
+  margin: 4px 2px;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  border: 2px solid rgb(23, 114, 210);
+}
+
+button:hover {
+  background-color: rgb(255, 255, 255);
+  color: rgb(23, 114, 210);
+}
+
+button:active {
+  background-color: rgb(22, 91, 165);
+  color: rgb(255, 255, 255);
+  border: 2px solid rgb(22, 91, 165);
+}
