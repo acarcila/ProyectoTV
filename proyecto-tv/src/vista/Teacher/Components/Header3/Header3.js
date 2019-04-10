@@ -14,7 +14,7 @@ class Header1 extends Component {
                         </div>
                     </div>
                 </a>
-                <div className="collapse justify-content-center navbar-collapse div-jdp" id="navbarNav">
+                <div className="collapse justify-content-center navbar-collapse div-jdp mr-5" id="navbarNav">
                     <ul className="navbar-nav">
                         <li className="nav-item active">
                             <a className="a-jdp nav-link" href="#">Resumen</a>
