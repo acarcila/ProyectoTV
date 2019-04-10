@@ -18,11 +18,11 @@ export default class Login extends Component {
                 <Header2 />
                 <div className="container">
                     <div className="row">
-                        <Card imagen="/assets/img/sistemamultimedia.jpg" titulo="Sistema Multimedia" subtitulo="Operaciones y sistemas" descripcion="Clase de arquitectura de sistema multimedia" />
-                        <Card imagen="/assets/img/sistemamultimedia.jpg" titulo="Software" subtitulo="Operaciones y sistemas" descripcion="Clase de arquitectura de sistema multimedia" />
-                        <Card imagen="/assets/img/sistemamultimedia.jpg" titulo="Hardware" subtitulo="Operaciones y sistemas" descripcion="Clase de arquitectura de sistema multimedia" />
-                        <Card imagen="/assets/img/sistemamultimedia.jpg" titulo="Contenido" subtitulo="Operaciones y sistemas" descripcion="Clase de arquitectura de sistema multimedia" />
-                        <Card imagen="/assets/img/sistemamultimedia.jpg" titulo="Telecomunicaciones" subtitulo="Operaciones y sistemas" descripcion="Clase de arquitectura de sistema multimedia" />
+                        <Card imagen="/assets/img/sistemaMultimedia.jpg" titulo="Sistema Multimedia" subtitulo="Operaciones y sistemas" descripcion="Clase de arquitectura de sistema multimedia" />
+                        <Card imagen="/assets/img/software.jpg" titulo="Software" subtitulo="Operaciones y sistemas" descripcion="Clase de arquitectura de sistema multimedia" />
+                        <Card imagen="/assets/img/hardware.jpeg" titulo="Hardware" subtitulo="Operaciones y sistemas" descripcion="Clase de arquitectura de sistema multimedia" />
+                        <Card imagen="/assets/img/contenido.jpg" titulo="Contenido" subtitulo="Operaciones y sistemas" descripcion="Clase de arquitectura de sistema multimedia" />
+                        <Card imagen="/assets/img/telecomunicaciones.jpg" titulo="Telecomunicaciones" subtitulo="Operaciones y sistemas" descripcion="Clase de arquitectura de sistema multimedia" />
                     </div>
                 </div>
             </div>
