@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import "./Comments.css";
 import Header3 from "../Components/Header3/Header3"
 import Comment from "../Components/Comments-Teacher/Comments-Teacher"
-import Question from "../Components/Question-Modal/Question"
 import { Player, ControlBar } from "video-react";
 import "video-react/dist/video-react.css";
 
@@ -38,10 +37,6 @@ export default class Login extends Component {
                     <div className="card" id="Comments-main-divs">
                         <div id="Comments-title">
                             <h4>Comentarios(4)</h4>
-                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                                Comentario
-                            </button>
-                            <Question/>
                         </div>
                         <div id="Comments-div">
                             <Comment imagen="/assets/img/foto.png" nombre="Rodrogo" comentario="¿Qué es UX?" tiempo="Min 1:20" />
