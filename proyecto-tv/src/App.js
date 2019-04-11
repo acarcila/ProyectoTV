@@ -18,9 +18,6 @@ const Home = Loadable({
   loading
 });
 
-
-  
-
 const TeacherHome = Loadable({
   loader: () => import("./vista/Teacher/Home/Home"),
   loading
@@ -41,6 +38,11 @@ const TeacherResultResume = Loadable({
   loading
 });
 
+const TeacherResultIndividual = Loadable({
+  loader: () => import("./vista/Teacher/ResultIndividual/ResultIndividual"),
+  loading
+});
+  
 const TeacherComments = Loadable({
   loader: () => import("./vista/Teacher/Comments/Comments"),
   loading
@@ -63,7 +65,8 @@ class App extends Component {
           <Route exact path="/Teacher/Home" name="Home" component={TeacherHome} />
           <Route exact path="/Teacher/Class" name="Class" component={TeacherClass} />
           <Route exact path="/Teacher/Topic" name="Topic" component={TeacherTopic} />
-          <Route exact path="/Teacher/ResultResume" name="Topic" component={TeacherResultResume} />
+          <Route exact path="/Teacher/ResultResume" name="Resume" component={TeacherResultResume} />
+          <Route exact path="/Teacher/ResultIndividual" name="Individual" component={TeacherResultIndividual} />
           <Route exact path="/Teacher/Comments" name="Comments" component={TeacherComments} />
 
         </Switch>
