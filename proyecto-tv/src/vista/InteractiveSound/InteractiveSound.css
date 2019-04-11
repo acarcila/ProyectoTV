@@ -1,15 +1,20 @@
-.rel-container-preguntas{
-    position: absolute;
-    top:0px;
+.rel-container-preguntas {
+  position: absolute;
+  top: 0px;
 }
 
-.rel-button-question{
-    display: block;
-    height: 10em;
-    margin-top: 2em;
+.rel-button-question {
+  display: block;
+  height: 10em;
+  margin-top: 2em;
 }
 
-.rel-microphono{
-    
+.rel-microphono {
+    width: 5em;
+    height: 5em;
+  background-image: url("https://image.flaticon.com/icons/svg/149/149972.svg");
+  background-color: #cccccc;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
-
