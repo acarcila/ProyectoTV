@@ -18,3 +18,9 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+.rel-comentario{
+    position: fixed;
+    bottom: 3em;
+    right: 2em;
+}
