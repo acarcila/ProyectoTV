@@ -12,7 +12,7 @@ class Comment extends Component {
       <div className="container mb-3">
         <div className="row no-gutters">
           <div className="col-md-4 card-jdp ml-3 mt-2">
-            <img src={this.props.imagen} className="card-img"/>
+            <img src={this.props.imagen} className="card-img" alt=""/>
           </div>
           <div className="col-md-8">
             <div className="card-body p-2">
