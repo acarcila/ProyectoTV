@@ -1,0 +1,30 @@
+.modal-header{
+    background-color: #4b0c81;
+    color: #ffffff;
+}
+.close{
+    color: #ffffff;
+}
+.close:hover{
+    color: #ffffff;
+}
+.btn-primary{
+    border-color: #4b0c81;
+    background-color: #4b0c81;
+}
+.btn-primary:hover{
+    border-color: #4b0c81;
+    background-color: #4b0c81;
+}
+.btn-primary:active{
+    border-color: #4b0c81 !important;
+    background-color: #4b0c81 !important;
+}
+.btn-primary::selection{
+    border-color: #4b0c81 !important;
+    background-color: #4b0c81 !important;
+}
+.custom-control-input:checked~.custom-control-label::before{
+    border-color: #4b0c81 !important;
+    background-color: #4b0c81 !important;
+}

@@ -4,7 +4,12 @@ import './Card.css';
 class Card extends Component {
     constructor(props) {
         super(props);
-        this.state = { imagen: "", titulo: "", subtitulo: "", descripcion: "" }
+        this.state = {
+            imagen: "",
+            titulo: "",
+            subtitulo: "",
+            descripcion: ""
+        }
     }
     render() {
         return (

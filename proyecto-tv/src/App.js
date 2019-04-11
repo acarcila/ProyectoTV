@@ -18,12 +18,6 @@ const Home = Loadable({
   loading
 });
 
-
-const InteractiveSound = Loadable({
-  loader: () => import("./vista/InteractiveSound/InteractiveSound"),
-  loading
-});
-
 const TeacherHome = Loadable({
   loader: () => import("./vista/Teacher/Home/Home"),
   loading
@@ -44,6 +38,16 @@ const TeacherResultResume = Loadable({
   loading
 });
 
+const TeacherResultIndividual = Loadable({
+  loader: () => import("./vista/Teacher/ResultIndividual/ResultIndividual"),
+  loading
+});
+  
+const TeacherComments = Loadable({
+  loader: () => import("./vista/Teacher/Comments/Comments"),
+  loading
+});
+
 class App extends Component {
   render() {
     return (
@@ -56,17 +60,14 @@ class App extends Component {
             name="Home - YOURLEARN"
             component={Home}
           />
-          <Route
-            exact
-            path="/InteractiveSound"
-            name="Video Home - YOURLEARN"
-            component={InteractiveSound}
-          />
+
           <Route exact path="/" name="Login - IMUAO" component={Login} />
           <Route exact path="/Teacher/Home" name="Home" component={TeacherHome} />
           <Route exact path="/Teacher/Class" name="Class" component={TeacherClass} />
           <Route exact path="/Teacher/Topic" name="Topic" component={TeacherTopic} />
-          <Route exact path="/Teacher/ResultResume" name="Topic" component={TeacherResultResume} />
+          <Route exact path="/Teacher/ResultResume" name="Resume" component={TeacherResultResume} />
+          <Route exact path="/Teacher/ResultIndividual" name="Individual" component={TeacherResultIndividual} />
+          <Route exact path="/Teacher/Comments" name="Comments" component={TeacherComments} />
 
         </Switch>
       </HashRouter>

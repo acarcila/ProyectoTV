@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "./ResultResume.css";
 import Header3 from "../Components/Header3/Header3"
 import Chart from "../Components/Chart/Chart"
-import Buttons from "../Components/Buttons/Buttons"
+import NavResult from "../Components/NavResult/NavResult";
 
 export default class Login extends Component {
 
@@ -54,12 +54,7 @@ export default class Login extends Component {
                 <Header3 />
                 <div className="container">
                     <div className="shadow-sm mt-3 bg-white rounded w-100">
-                        <nav className="navbar navbar-expand-lg navbar-dark">
-                            <div className="btn">22 respuestas</div>
-                            <div className="collapse justify-content-center navbar-collapse" id="navbarNav">
-                                <Buttons/>
-                            </div>
-                        </nav>
+                        <NavResult/>
                         <div className="container justify-content-center container-jdp">
                             <div className="mb-4 p-3">
                                 <Chart chartData={this.state.chartData} location="Que es un sistema multimedia" legendPosition="bottom" />
