@@ -1,0 +1,14 @@
+.Main-Section{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 2em;
+}
+#Comments-main-div{
+
+}
+#Comments-title{
+    padding-left: 2em;
+    padding-right: 2em;
+    color: #4D4f5c;
+}
