@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import "./Home.css";
 import "video-react/dist/video-react.css";
 import { Player, ControlBar } from "video-react";
+import Question from "../Teacher/Components/Question-Modal/Question";
+
 
 const sources = {
   sintelTrailer: "./assets/video/Que_es_Multimedia.mp4",
@@ -192,6 +194,15 @@ export default class Home extends Component {
             </div>
           </div>
         </div>
+        <button
+          type="button"
+          className="btn btn-primary rounded-pill rel-comentario btn-momo"
+          data-toggle="modal"
+          data-target="#exampleModal"
+        >
+          Comentario
+        </button>
+        <Question />
       </div>
     );
   }

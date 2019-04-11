@@ -8,19 +8,19 @@
 .close:hover{
     color: #ffffff;
 }
-.btn-primary{
+.btn-momo{
     border-color: #4b0c81;
     background-color: #4b0c81;
 }
-.btn-primary:hover{
+.btn-momo:hover{
     border-color: #4b0c81;
     background-color: #4b0c81;
 }
-.btn-primary:active{
+.btn-momo:active{
     border-color: #4b0c81 !important;
     background-color: #4b0c81 !important;
 }
-.btn-primary::selection{
+.btn-momo::selection{
     border-color: #4b0c81 !important;
     background-color: #4b0c81 !important;
 }
