@@ -196,7 +196,7 @@ export default class Home extends Component {
         </div>
         <button
           type="button"
-          className="btn btn-primary rounded-pill rel-comentario"
+          className="btn btn-primary rounded-pill rel-comentario btn-momo"
           data-toggle="modal"
           data-target="#exampleModal"
         >

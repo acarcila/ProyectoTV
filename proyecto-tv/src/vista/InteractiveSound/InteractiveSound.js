@@ -275,7 +275,9 @@ export default class InteractiveSound extends Component {
               </div>
               <div className="card rel-button-question w-100">
                 <div className="card-body d-flex align-items-center h-100 justify-content-center">
-                  <h3 className="align-middle justify-content-center">HCI</h3>
+                  <h3 className="align-middle justify-content-center">
+                    HCI
+                  </h3>
                 </div>
               </div>
             </div>
@@ -329,7 +331,7 @@ export default class InteractiveSound extends Component {
         </div>
         <button
           type="button"
-          className="btn btn-primary rounded-pill rel-comentario"
+          className="btn btn-primary rounded-pill rel-comentario btn-momo"
           data-toggle="modal"
           data-target="#exampleModal"
           onClick={this.handleClick}

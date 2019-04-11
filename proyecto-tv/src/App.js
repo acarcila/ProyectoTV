@@ -1,3 +1,4 @@
+import * as firebase from "firebase";
 import React, { Component } from "react";
 import Loadable from "react-loadable";
 import { HashRouter, Route, Switch } from "react-router-dom";
