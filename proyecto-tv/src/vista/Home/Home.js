@@ -8,7 +8,7 @@ const sources = {
   bunnyTrailer: "./assets/video/Curso-React-Introduccion.mp4"
 };
 
-var tiempo;
+var tiempo, interval;
 
 export default class Home extends Component {
   constructor(props, context) {
@@ -126,7 +126,7 @@ export default class Home extends Component {
   componentDidMount() {
     var me = this;
     var promise = new Promise((resolve, reject) => {
-      setInterval(function() {
+      interval = setInterval(function() {
         resolve(me.changeTime());
       }, 250);
     });
@@ -136,6 +136,8 @@ export default class Home extends Component {
   }
   //preguntas
   answerCorrect() {
+    clearInterval(interval);
+    this.props.history.push("/InteractiveSound");
     console.log("correcto");
   }
   answerNoCorrect() {
