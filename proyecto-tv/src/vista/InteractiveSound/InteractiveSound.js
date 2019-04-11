@@ -8,7 +8,7 @@ const sources = {
   sintelTrailer: "./assets/video/Que_es_Multimedia.mp4",
   bunnyTrailer: "./assets/video/Curso-React-Introduccion.mp4"
 };
-var tiempo;
+var tiempo,interval;
 
 export default class InteractiveSound extends Component {
   constructor() {
@@ -25,7 +25,8 @@ export default class InteractiveSound extends Component {
       voiceStatus: "hello",
       voiceInput: ["hello world", "halo war", "hallow world"],
       source: sources["sintelTrailer"],
-      time: tiempo
+      time: tiempo,
+      estado: false
     };
 
     this.button = React.createRef();
@@ -56,12 +57,17 @@ export default class InteractiveSound extends Component {
     this.setState({
       voiceStatus: annyang.isSupported() ? "Supported" : "Unsupported"
     });
-
     var me = this;
     var promise = new Promise((resolve, reject) => {
-      setInterval(function() {
-        resolve(me.changeTime());
-      }, 250);
+      
+      if (!this.state.estado) {
+        interval = setInterval(function() {
+          resolve(me.changeTime());
+        }, 250);
+      }else{
+        clearInterval(interval);
+      }
+      
     });
     promise.then(successMessage => {
       console.log("gg");
@@ -167,6 +173,27 @@ export default class InteractiveSound extends Component {
     });
     this.detecTime(tiempo);
     console.log(tiempo);
+    if (
+      this.state.voiceStatus.toUpperCase() === "LISTENING"
+    ) {
+      var dictado = this.state.voiceInput.some((input, i) => {
+        var flag = input.toUpperCase() === "SOFTWARE";
+        if (!flag) {
+        } else {
+          clearInterval(interval);
+          this.props.history.push("/Home");
+          annyang.abort();
+          this.setState({
+            estado: flag
+          });
+          return flag;
+        }
+      });
+      console.log(dictado);
+      console.log(this.state.voiceStatus.toUpperCase() + " escucho");
+    } else {
+      console.log(this.state.voiceStatus.toUpperCase() + " no escucho");
+    }
   }
   detecTime(time) {
     if (time >= 10) {
@@ -250,9 +277,7 @@ export default class InteractiveSound extends Component {
               </div>
               <div className="card rel-button-question w-100">
                 <div className="card-body d-flex align-items-center h-100 justify-content-center">
-                  <h3 className="align-middle justify-content-center">
-                    HCI
-                  </h3>
+                  <h3 className="align-middle justify-content-center">HCI</h3>
                 </div>
               </div>
             </div>
@@ -295,6 +320,7 @@ export default class InteractiveSound extends Component {
                   </button>
                 </div>
                 <div className="row">
+                  {this.state.voiceStatus.toUpperCase()}
                   {this.state.voiceInput.map((input, i) => {
                     return <li>{input}</li>;
                   })}
