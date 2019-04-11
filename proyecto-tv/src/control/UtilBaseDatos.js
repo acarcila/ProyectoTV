@@ -31,7 +31,7 @@ class UtilBaseDatos {
         firebase.database().ref(coleccion).set(documento);
     }
 
-    static guardarComentario(idVideo, idEstudiante, textoComentario, tituloComentario)
+    static guardarComentario(idVideo, idEstudiante, textoComentario, tituloComentario, tiempo)
     {
         var comentario = {
             idComentario: firebase.database().ref().child('Comentarios').push().key,
@@ -39,6 +39,7 @@ class UtilBaseDatos {
             idEstudiante: idEstudiante,
             comentario: textoComentario,
             tituloComentario: tituloComentario,
+            tiempo: tiempo
         }
 
         this.guardarBaseDatos("Comentarios/" + comentario.idComentario, comentario);
@@ -50,10 +51,44 @@ class UtilBaseDatos {
             idRespuestaComentario: firebase.database().ref().child('RespuestaComentarios').push().key,
             idComentario: idComentario,
             idEstudiante: idEstudiante,
-            comentario: textoComentario
+            comentario: textoComentario,
         }
 
         this.guardarBaseDatos("RespuestaComentarios/" + respuestaComentario.idRespuestaComentario, respuestaComentario);
+    }
+
+    static guardarPregunta(idVideo, idEstudiante, enunciado)
+    {
+        var pregunta = {
+            idPregunta: firebase.database().ref().child('Preguntas').push().key,
+            idVideo: idVideo,
+            idEstudiante: idEstudiante,
+            enunciado: enunciado
+        }
+
+        this.guardarBaseDatos("Preguntas/" + pregunta.idPregunta, pregunta);
+    }
+
+    static guardarOpcion(idPregunta, valor)
+    {
+        var opcion = {
+            idOpcion: firebase.database().ref().child('Opciones').push().key,
+            idVideo: idPregunta,
+            valor: valor
+        }
+
+        this.guardarBaseDatos("Opciones/" + opcion.idOpcion, opcion);
+    }
+
+    static guardarRespuesta(idPregunta, valor)
+    {
+        var respuesta = {
+            idRespuesta: firebase.database().ref().child('Respuestas').push().key,
+            idPregunta: idPregunta,
+            valor: valor
+        }
+
+        this.guardarBaseDatos("Respuestas/" + respuesta.idRespuesta, respuesta);
     }
 
     //Guardar en la base de datos--------------
@@ -78,6 +113,21 @@ class UtilBaseDatos {
     static consultarRespuestaComentario() {
 
         return this.consultarBaseDatos("RespuestaComentarios");
+    }
+
+    static consultarPregunta()
+    {
+        return this.consultarBaseDatos("Preguntas");
+    }
+
+    static consultarOpcion()
+    {
+        return this.consultarBaseDatos("Opciones");
+    }
+
+    static consultarRespuesta()
+    {
+        return this.consultarBaseDatos("Respuestas");
     }
 
     //Consultar en la base de datos--------------
