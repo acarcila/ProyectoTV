@@ -4,7 +4,7 @@ import Header3 from "../Components/Header3/Header3"
 import Comment from "../Components/Comments-Teacher/Comments-Teacher"
 import { Player, ControlBar } from "video-react";
 import "video-react/dist/video-react.css";
-import * as firebase from "firebase";
+import UtilBaseDatos from "../../../control/UtilBaseDatos";
 
 const sources = {
     sintelTrailer: "./assets/video/Que_es_Multimedia.mp4",
@@ -12,79 +12,82 @@ const sources = {
 };
 
 export default class Login extends Component {
-                 constructor() {
-                   super();
-                   this.state = {
-                       source: sources["sintelTrailer"],
-                       coments: {}
-                   };
-                 }
+    constructor() {
+        super();
+        this.state = {
+            source: sources["sintelTrailer"],
+            listaComentarios: []
+        };
+    }
 
-                 componentDidMount() {
-                   const attemptCard = firebase
-                     .database()
-                     .ref()
-                     .child("prueba");
+    componentDidMount() {
+        this.timerID = setInterval(
+            () => this.actualizarComentarios(),
+            1000
+        );
+    }
 
-                   attemptCard
-                     .orderByKey()
-                     .limitToLast(1)
-                     .on("value", snapshot => {
-                       var newPost = snapshot.val();
-                       this.setState({
-                         coments: newPost.uid
-                       });
-                       console.log(newPost);
-                       
-                     });
-                 }
-                 render() {
-                   return (
-                     <div>
-                       <Header3 />
-                       <section className="Main-Section">
-                         <div id="Video">
-                           <Player
-                             ref="player"
-                             autoPlay
-                             fluid={false}
-                             width={640}
-                             height={360}
-                           >
-                             <source src={this.state.source} />
-                             <ControlBar autoHide={false} />
-                           </Player>
-                         </div>
-                         <div
-                           className="card"
-                           id="Comments-main-divs"
-                         >
-                           <div id="Comments-title">
-                             <h4>Comentarios(4)</h4>
-                           </div>
-                           <div id="Comments-div">
-                             <Comment
-                               imagen="/assets/img/foto.png"
-                               nombre="Rodrogo"
-                               comentario="¿Qué es UX?"
-                               tiempo="Min 1:20"
-                             />
-                             <Comment
-                               imagen="/assets/img/foto.png"
-                               nombre="Camilox"
-                               comentario="¿Usabilidad?"
-                               tiempo="Min 2:50"
-                             />
-                             <Comment
-                               imagen="/assets/img/foto.png"
-                               nombre="Possillo"
-                               comentario="¿De que clase de prueba habla?"
-                               tiempo="Min 10:00"
-                             />
-                           </div>
-                         </div>
-                       </section>
-                     </div>
-                   );
-                 }
-               }
+    actualizarComentarios() {
+        UtilBaseDatos.consultarComentario()
+            .then(valor => this.setState({ listaComentarios: Object.values(valor) }))
+            .catch(error => this.setState({ listaComentarios: '' }));
+    }
+
+    render() {
+        return (
+            <div>
+                <Header3 />
+                <section className="Main-Section">
+                    <div id="Video">
+                        <Player
+                            ref="player"
+                            autoPlay
+                            fluid={false}
+                            width={640}
+                            height={360}
+                        >
+                            <source src={this.state.source} />
+                            <ControlBar autoHide={false} />
+                        </Player>
+                    </div>
+                    <div
+                        className="card"
+                        id="Comments-main-divs"
+                    >
+                        <div id="Comments-title">
+                            <h4>Comentarios({this.state.listaComentarios.length})</h4>
+                        </div>
+                        <div id="Comments-div">
+                            <Comentarios listaComentarios={this.state.listaComentarios} />
+                        </div>
+                    </div>
+                </section>
+            </div>
+        );
+    }
+}
+
+function Comentarios(props) {
+    const comentarios = props.listaComentarios;
+    const listItems = comentarios.map((comentario) => {
+        const tiempo = new Date(parseInt(comentario.tiempo) * 1000);
+        const mes = tiempo.getMonth() + 1;
+        const dia = tiempo.getDate();
+        const anio = tiempo.getFullYear();
+        const fecha = mes + "/" + dia + "/" + anio
+
+        return (
+            <Comment
+                imagen="/assets/img/foto.png"
+                nombre="Possillo"
+                comentario={comentario.comentario}
+                tiempo={fecha}
+                key={comentario.idComentario}
+            />
+        )
+    });
+
+    return (
+        <ul>{listItems}</ul>
+    );
+}
