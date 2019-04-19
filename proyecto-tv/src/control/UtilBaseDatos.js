@@ -97,12 +97,10 @@ class UtilBaseDatos {
     //Consultar en la base de datos--------------
 
     static consultarBaseDatos(coleccion) {
-        var respuesta;
-        firebase.database().ref(coleccion).on("value", function(snapshot){
-            respuesta = snapshot.val();
-        })
-
-        return respuesta;
+        return new Promise((resolve, reject) => {
+            firebase.database().ref(coleccion)
+            .on('value', snapshot => resolve(snapshot.val()));
+        });
     }
 
     static consultarComentario() {
