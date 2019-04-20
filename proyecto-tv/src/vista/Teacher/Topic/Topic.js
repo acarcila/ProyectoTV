@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "./Topic.css";
 import Header3 from "../Components/Header3/Header3"
 import Chart from "../Components/Chart/Chart"
-import Comment from "../Components/Comment/Comment"
+import Comment from "../Components/Comments/Comment/Comment"
 
 export default class Login extends Component {
     constructor() {

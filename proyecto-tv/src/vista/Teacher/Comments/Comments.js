@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./Comments.css";
 import Header3 from "../Components/Header3/Header3"
-import Comment from "../Components/Comments-Teacher/Comments-Teacher"
+import Comments from "../Components/Comments/Comments"
 import { Player, ControlBar } from "video-react";
 import "video-react/dist/video-react.css";
 import UtilBaseDatos from "../../../control/UtilBaseDatos";
@@ -58,36 +58,11 @@ export default class Login extends Component {
                             <h4>Comentarios({this.state.listaComentarios.length})</h4>
                         </div>
                         <div id="Comments-div">
-                            <Comentarios listaComentarios={this.state.listaComentarios} />
+                            <Comments listaComentarios={this.state.listaComentarios} />
                         </div>
                     </div>
                 </section>
             </div>
         );
     }
-}
-
-function Comentarios(props) {
-    const comentarios = props.listaComentarios;
-    const listItems = comentarios.map((comentario) => {
-        const tiempo = new Date(parseInt(comentario.tiempo) * 1000);
-        const mes = tiempo.getMonth() + 1;
-        const dia = tiempo.getDate();
-        const anio = tiempo.getFullYear();
-        const fecha = mes + "/" + dia + "/" + anio
-
-        return (
-            <Comment
-                imagen="/assets/img/foto.png"
-                nombre="Possillo"
-                comentario={comentario.comentario}
-                tiempo={fecha}
-                key={comentario.idComentario}
-            />
-        )
-    });
-
-    return (
-        <ul>{listItems}</ul>
-    );
 }
